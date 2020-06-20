@@ -20,7 +20,7 @@ const DefaultParameters: SwipeableParameters = {
 const Swipeable: SwipeableDirective = {
   bind: async (el: HTMLElement, binding: SwipeableDirectiveBinding, vnode: VNode): Promise<void> => {
     await HasRendered(); // Ensures that bindings have been evaluated
-    let detectedScroll: boolean | null = false;
+    let detectedScroll: boolean | null = null;
     let swipedOut                      = false;
 
     const parameters = {...DefaultParameters, ...binding.value};
